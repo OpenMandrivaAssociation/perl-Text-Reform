@@ -1,6 +1,6 @@
 %define module	Text-Reform
 %define version	1.11
-%define release %mkrel 4
+%define release %mkrel 5
 
 Name:		perl-%{module}
 Version:	%{version}
@@ -15,7 +15,6 @@ Requires:       perl
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildArch:	noarch
 
-
 %description
 The form() subroutine may be exported from the module. It takes a series
 of format (or "picture") strings followed by replacement values, inter-
@@ -24,21 +23,17 @@ The effect is similar to the inbuilt perl format mechanism, although the
 field specification syntax is simpler and some of the formatting beha-
 viour is more sophisticated.
 
-
-
 %prep
-
 %setup -q -n %{module}-%{version}
 %__perl -pi -e "s,/usr/local/bin/perl,%__perl," *.pl
 # muhahahah
 
-
 %build
-
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 make
-make test
 
+%check
+make test
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -48,17 +43,12 @@ install -d $RPM_BUILD_ROOT/$installarchlib
 
 %makeinstall_std
 
-install -d $RPM_BUILD_ROOT/%{_datadir}
-
-
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(-,root,root)
 %doc README MANIFEST Changes
 %{perl_vendorlib}/Text/*
 %{_mandir}/*/*
-
 
