@@ -12,6 +12,7 @@ URL:		http://search.cpan.org/author/DCONWAY/Text-Reform-1.11/lib/Text/Reform.pm
 Source0:	%{module}-%{version}.tar.bz2
 BuildRequires:	perl-devel
 Requires:       perl
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildArch:	noarch
 
 %description
