@@ -1,6 +1,6 @@
 %define module	Text-Reform
-%define version	1.11
-%define release %mkrel 7
+%define version	1.12.2
+%define release %mkrel 1
 
 Name:		perl-%{module}
 Version:	%{version}
@@ -8,12 +8,10 @@ Release:	%{release}
 Summary:	Manual text wrapping and reformatting
 License:	Artistic
 Group:		Text tools
-URL:		http://search.cpan.org/author/DCONWAY/Text-Reform-1.11/lib/Text/Reform.pm
-Source0:	%{module}-%{version}.tar.bz2
-BuildRequires:	perl-devel
-Requires:       perl
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+Url:        http://search.cpan.org/dist/%{module}
+Source:     http://www.cpan.org/modules/by-module/Term/%{module}-v%{version}.tar.gz
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 The form() subroutine may be exported from the module. It takes a series
@@ -24,7 +22,7 @@ field specification syntax is simpler and some of the formatting beha-
 viour is more sophisticated.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{module}-v%{version}
 %__perl -pi -e "s,/usr/local/bin/perl,%__perl," *.pl
 # muhahahah
 
@@ -36,15 +34,11 @@ make
 make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
-
-eval `perl '-V:installarchlib'`
-install -d $RPM_BUILD_ROOT/$installarchlib
-
+rm -rf %{buildroot}
 %makeinstall_std
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
