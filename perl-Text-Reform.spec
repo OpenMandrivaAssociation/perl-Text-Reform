@@ -9,7 +9,7 @@ Summary:	Manual text wrapping and reformatting
 License:	Artistic
 Group:		Text tools
 Url:        http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/Term/%{module}-v%{version}.tar.gz
+Source:     http://www.cpan.org/modules/by-module/Text/%{module}-v%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
