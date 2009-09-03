@@ -1,6 +1,6 @@
 %define module	Text-Reform
 %define version	1.12.2
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:		perl-%{module}
 Version:	%{version}
