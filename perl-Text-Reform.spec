@@ -1,17 +1,18 @@
-%define module	Text-Reform
-%define version	1.12.2
-%define release %mkrel 2
+%define upstream_name	 Text-Reform
+%define upstream_version 1.20
 
-Name:		perl-%{module}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Manual text wrapping and reformatting
 License:	Artistic
 Group:		Text tools
-Url:        http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/Text/%{module}-v%{version}.tar.gz
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 The form() subroutine may be exported from the module. It takes a series
@@ -22,7 +23,7 @@ field specification syntax is simpler and some of the formatting beha-
 viour is more sophisticated.
 
 %prep
-%setup -q -n %{module}-v%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 %__perl -pi -e "s,/usr/local/bin/perl,%__perl," *.pl
 # muhahahah
 
@@ -45,4 +46,3 @@ rm -rf %{buildroot}
 %doc README MANIFEST Changes
 %{perl_vendorlib}/Text/*
 %{_mandir}/*/*
-
