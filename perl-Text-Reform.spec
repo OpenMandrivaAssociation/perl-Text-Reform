@@ -1,14 +1,14 @@
 %define modname	Text-Reform
-%define modver	1.20
+%define modver 5.13.6
 
 Summary:	Manual text wrapping and reformatting
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	10
+Release:	1
 License:	Artistic
 Group:		Text tools
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/Text/%{modname}-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Text/MIYAGAWA/perl-%{version}.tar.bz2
 BuildArch:	noarch
 BuildRequires:	perl-devel
 
@@ -39,4 +39,5 @@ make test
 %doc README MANIFEST Changes
 %{perl_vendorlib}/Text/*
 %{_mandir}/man3/*
+
 
