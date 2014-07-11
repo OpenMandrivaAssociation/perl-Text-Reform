@@ -4,7 +4,7 @@
 Summary:	Manual text wrapping and reformatting
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	11
+Release:	12
 License:	Artistic
 Group:		Text tools
 Url:		http://search.cpan.org/dist/%{modname}
