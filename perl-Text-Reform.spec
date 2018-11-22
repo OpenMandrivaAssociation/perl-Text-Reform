@@ -4,10 +4,10 @@
 Summary:	Manual text wrapping and reformatting
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	18
+Release:	19
 License:	Artistic
 Group:		Text tools
-Url:		http://search.cpan.org/dist/%{modname}
+Url:		http://metacpan.org/pod/Text::Reform
 Source0:	http://www.cpan.org/modules/by-module/Text/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Test::More)
