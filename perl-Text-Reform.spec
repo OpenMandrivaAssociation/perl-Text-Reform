@@ -4,7 +4,7 @@
 Summary:	Manual text wrapping and reformatting
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	20
+Release:	21
 License:	Artistic
 Group:		Text tools
 Url:		http://metacpan.org/pod/Text::Reform
