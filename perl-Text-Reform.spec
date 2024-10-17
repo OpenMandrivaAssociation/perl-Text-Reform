@@ -7,7 +7,7 @@ Version:	%perl_convert_version %{modver}
 Release:	21
 License:	Artistic
 Group:		Text tools
-Url:		http://metacpan.org/pod/Text::Reform
+Url:		https://metacpan.org/pod/Text::Reform
 Source0:	http://www.cpan.org/modules/by-module/Text/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Test::More)
