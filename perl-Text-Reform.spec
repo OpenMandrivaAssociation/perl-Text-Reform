@@ -1,14 +1,13 @@
 %define modname	Text-Reform
-%define modver	1.20
 
 Summary:	Manual text wrapping and reformatting
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	22
+Version:	1.20
+Release:	1
 License:	Artistic
 Group:		Text tools
 Url:		https://metacpan.org/pod/Text::Reform
-Source0:	http://www.cpan.org/modules/by-module/Text/%{modname}-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Text/%{modname}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
@@ -22,22 +21,20 @@ field specification syntax is simpler and some of the formatting beha-
 viour is more sophisticated.
 
 %prep
-%setup -qn %{modname}-%{modver}
+%setup -qn %{modname}-%{version}
 %__perl -pi -e "s,/usr/local/bin/perl,%__perl," *.pl
-# muhahahah
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
-%make
+perl Makefile.PL INSTALLDIRS=vendor
+%make_build
 
 %check
 make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc README MANIFEST Changes
 %{perl_vendorlib}/Text/*
 %{_mandir}/man3/*
-
